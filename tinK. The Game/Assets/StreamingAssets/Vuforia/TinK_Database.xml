@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="boscard" size="1.000000 1.131403" />
+    <ImageTarget name="Beer_card" size="1.000000 1.176600" />
+    <ImageTarget name="Beercombi" size="1.000000 1.593583" />
+    <ImageTarget name="Beerkaart" size="1.000000 1.003171" />
     <ImageTarget name="trackingphoto" size="1.000000 1.777778" />
     <ImageTarget name="Vincent_tracking" size="1.000000 1.777778" />
     <ImageTarget name="IMG_20171127_121404" size="1.000000 0.562500" />
