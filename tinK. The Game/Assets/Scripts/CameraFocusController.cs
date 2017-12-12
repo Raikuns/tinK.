@@ -1,32 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Vuforia;
+using UnityEngine.UI;
 
 public class CameraFocusController : MonoBehaviour
 {
+    public bool flashToggle;
 
-    // code from  Vuforia Developer Library
-    // https://library.vuforia.com/articles/Solution/Camera-Focus-Modes
     void Start()
     {
-        var vuforia = VuforiaARController.Instance;
-        vuforia.RegisterVuforiaStartedCallback(OnVuforiaStarted);
-        vuforia.RegisterOnPauseCallback(OnPaused);
+        VuforiaARController.Instance.RegisterVuforiaStartedCallback(OnVuforiaStarted);
+        VuforiaARController.Instance.RegisterOnPauseCallback(OnPaused);
     }
 
     private void OnVuforiaStarted()
     {
-        CameraDevice.Instance.SetFocusMode(
-            CameraDevice.FocusMode.FOCUS_MODE_CONTINUOUSAUTO);
+        CameraDevice.Instance.SetFocusMode(CameraDevice.FocusMode.FOCUS_MODE_CONTINUOUSAUTO);
     }
 
     private void OnPaused(bool paused)
     {
-        if (!paused) // resumed
-        {
-            // Set again autofocus mode when app is resumed
-            CameraDevice.Instance.SetFocusMode(
-               CameraDevice.FocusMode.FOCUS_MODE_CONTINUOUSAUTO);
-        }
+        if (!paused)
+            CameraDevice.Instance.SetFocusMode(CameraDevice.FocusMode.FOCUS_MODE_CONTINUOUSAUTO);
+    }
+
+    public void ToogleFlash()
+    {
+        flashToggle = !flashToggle;
+        CameraDevice.Instance.SetFlashTorchMode(flashToggle);
     }
 }
