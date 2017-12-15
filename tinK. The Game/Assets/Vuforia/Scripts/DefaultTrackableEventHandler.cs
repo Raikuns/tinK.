@@ -14,9 +14,11 @@ using Vuforia;
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
+    
     #region PRIVATE_MEMBER_VARIABLES
-
+    
     protected TrackableBehaviour mTrackableBehaviour;
+    
 
     #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -27,6 +29,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
+
+        
     }
 
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -84,6 +88,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Enable canvas':
         foreach (var component in canvasComponents)
             component.enabled = true;
+
+
     }
 
 
@@ -104,6 +110,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Disable canvas':
         foreach (var component in canvasComponents)
             component.enabled = false;
+
     }
 
     #endregion // PRIVATE_METHODS
