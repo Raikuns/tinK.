@@ -14,9 +14,10 @@ using Vuforia;
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
-    
+    public GameObject beervraag;
+
     #region PRIVATE_MEMBER_VARIABLES
-    
+
     protected TrackableBehaviour mTrackableBehaviour;
     
 
@@ -50,6 +51,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+            Vragen();
             OnTrackingFound();
         }
         else if (previousStatus == TrackableBehaviour.Status.TRACKED &&
@@ -77,6 +79,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
 
+        //Vragen();
+
         // Enable rendering:
         foreach (var component in rendererComponents)
             component.enabled = true;
@@ -99,6 +103,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
 
+
         // Disable rendering:
         foreach (var component in rendererComponents)
             component.enabled = false;
@@ -111,6 +116,19 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         foreach (var component in canvasComponents)
             component.enabled = false;
 
+    }
+
+    public void Vragen()
+    {
+
+        if(mTrackableBehaviour.TrackableName == "Beer_card")
+        {
+            beervraag.SetActive(true);
+            //FindObjectOfType<AudioManager>().Play("Mbeer");
+            Debug.Log("BEER CARD FOUND PEDOBEAR PEDOBEAR LIEVE JOOP!!!!!");
+        }
+        //quest = !quest;
+        //game.SetActive(quest);
     }
 
     #endregion // PRIVATE_METHODS
