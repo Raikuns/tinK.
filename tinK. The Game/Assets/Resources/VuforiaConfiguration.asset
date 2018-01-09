@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vuforia:
     vuforiaLicenseKey: AdTqvpf/////AAAAGbyMEOgBy0shsxZ+v7SD9dZ7iCfHqW7xmxGy066OK45r3Yr5v0mxvYJoU+tJrayjO2X/bSByqWnF95R3GzALmKGP31Yv4QbPJf9MW4PLRhrbwhvziTuIzSRTb9XklwUBDdRXso63I3fjox79b4zbk6uwTk0SEv+uIh2FdSBTRi1gD7lejZuo74ioHJxBXArWZMlvMCsI42ubSth0UTBRNtBTGKGsi7coTTo7bwRpFraAiApdNm7EfRo2Xo8RT4iPcx297l5lWgtehGbRY2F5UCHfS1VbcQc4qLgw6VcMehgJ6AuaIk4Q9fCOzVWehkDD3f6dlx8dP9S+ZDe9pKrjrN8MgY1BtxqJiRRYnRxNjYEP
-    ufoLicenseKey: QVdHeGtNZi8vLy8vQUFBQUtJZGRBQklzUmtER2xJT2ZmNzhkL1c0dG9Qa1BTME9zQ2Uyb3BVWGxXbTRqRWcwT29NVG1hd2kxQUp6aWtuZS85aTJZdlgwajBldDlRNHVqNmhpbUhiTWVEUkRuMG9qOFQxVDBDK1NNQkp2R3ZsZDZ4T0x4Zlk3TEtOUmtCZ0ZsTGVpQjBGazl0NnRZR0gzVkh3SnM0ZXdvQmdVRkFuOXJ1c0VIWE9kbkNHbDRTK3lVRlpsRW02UmloS1dMOWNWYVhpOFhNQnY2d1B4b21rK09Wa1JpQmpjWjNTUFU3SmlqVmwxNHF0MStYVDI2VzBRaGowdTdNUkV5bDJVTVZSbGJESDFFV2pHZGUrRktnaVFEbUFNWVRyL1pRaXRINWxuTkFZSnZPcWJqb2EydTIzeFYycmZoYnY0Rk5ta3dpbk5zSDlQTjFtbUh1S21jVDVzQjZFTXVqWWtLQWRSaUtmN3JaL3UzZ1R3WFovcUE=
+    ufoLicenseKey: QWJhUjNKdi8vLy8vQUFBQUtFZU0xK3M3SDA1bHR2MDBJcGZmcDF4cmo3MG9IMG5iUTNheWpHZisyYkxsRHcvRnp2VG1tUVM1MytuOVlZS1RUc2dXeHhhYUVDOWJ6MmYwOHVnOHkzUlMrYVQ5OFAyakN2dUZ4dlJFZEpKSXd6MlY3N0M0Y0JWbTUzVVppMFdOQVBXLy92OXVMbjBMb3d4ODBxcXNxMGlqL2JGb3FmQ2Q1Vnd6VCtQTm9SbmVmSzQxSDRBZE9jRVkyckZCMXVPbTJ2UzVkSWtmK3doMFZZdFBpMWRGNU1TSytxNHIyMFFXWExONkNXTHpyNHlZeXA2dDNBL2hORjZEaUlmbGVHQm90MFlwajYvT2dkREJnVUljUW9aQ0FVMCtoZUp0TTh0SGhHRmNhcU52bnRyenF5dFNlbjVWK2tkUVQxSVF0czdYU0MycW5LTFV6NnhMSzNLNFJQK01oUEVvRVJaM2I0V2ZVMWdyV0k4VU8rQTU=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 2
@@ -44,15 +44,17 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
-    - TinK_Database
     - VuforiaMars_Images
-    - VuforiaMars_Object_OT
     - VuforiaMars_VuMark
+    - VuforiaMars_Object_OT
+    - VuforiaMars_ModelTarget
+    - TinK_Database
     dataSetsToActivate:
-    - TinK_Database
     - VuforiaMars_Images
-    - VuforiaMars_Object_OT
     - VuforiaMars_VuMark
+    - VuforiaMars_Object_OT
+    - VuforiaMars_ModelTarget
+    - TinK_Database
   videoBackground:
     clippingMode: 0
     numDivisions: 2
@@ -60,11 +62,6 @@ MonoBehaviour:
       type: 0}
     matteShader: {fileID: 15310, guid: 0000000000000000f000000000000000, type: 0}
     videoBackgroundEnabled: 1
-  smartTerrainTracker:
-    autoInitTracker: 0
-    autoStartTracker: 0
-    autoInitBuilder: 0
-    sceneUnitsToMillimeter: 0
   deviceTracker:
     autoInitTracker: 0
     autoStartTracker: 0
@@ -73,6 +70,9 @@ MonoBehaviour:
     modelCorrectionMode: 0
     modelTransformEnabled: 0
     modelTransform: {x: 0, y: 0.1, z: -0.1}
+  smartTerrain:
+    autoInitTracker: 0
+    autoStartTracker: 0
   webcam:
     deviceNameSetInEditor: 
     flipHorizontally: 0

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="IjsBeerKaart" size="1.000000 1.000000" />
+    <ImageTarget name="BruineBeerKaart" size="1.000000 1.000000" />
+    <ImageTarget name="vinjpg" size="1.000000 1.461538" />
     <ImageTarget name="Hertkaart" size="1.000000 1.111111" />
     <ImageTarget name="NoordpoolKaart" size="1.000000 1.142792" />
     <ImageTarget name="boscard" size="1.000000 1.131403" />

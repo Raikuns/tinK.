@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,5 +24,27 @@ public class MainMenu : MonoBehaviour {
     public void PlaySound()
     {
         FindObjectOfType<AudioManager>().Play("Button");
+    }
+
+    public void PlayMenuEerst()
+    {
+        FindObjectOfType<AudioManager>().Play("EersteSlide");
+    }
+
+    public void PlayMenuTweede()
+    {
+        FindObjectOfType<AudioManager>().Play("TweedeSlide");
+    }
+
+    public void PlayMenuDerde()
+    {
+        FindObjectOfType<AudioManager>().Play("DerdeSlide");
+    }
+
+    public void StopPlayDialoog()
+    {
+        FindObjectOfType<AudioManager>().StopPlay("EersteSlide");
+        FindObjectOfType<AudioManager>().StopPlay("TweedeSlide");
+        FindObjectOfType<AudioManager>().StopPlay("DerdeSlide");
     }
 }

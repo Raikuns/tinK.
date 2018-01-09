@@ -14,12 +14,11 @@ using Vuforia;
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
-    public GameObject beervraag;
+    public GameObject beerVraag;
 
     #region PRIVATE_MEMBER_VARIABLES
 
     protected TrackableBehaviour mTrackableBehaviour;
-    
 
     #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -30,8 +29,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
-
-        
     }
 
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -75,11 +72,10 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     protected virtual void OnTrackingFound()
     {
+
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
-
-        //Vragen();
 
         // Enable rendering:
         foreach (var component in rendererComponents)
@@ -92,8 +88,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Enable canvas':
         foreach (var component in canvasComponents)
             component.enabled = true;
-
-
     }
 
 
@@ -102,7 +96,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
-
 
         // Disable rendering:
         foreach (var component in rendererComponents)
@@ -115,21 +108,17 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Disable canvas':
         foreach (var component in canvasComponents)
             component.enabled = false;
-
     }
 
     public void Vragen()
     {
-
-        if(mTrackableBehaviour.TrackableName == "Beer_card")
+        if(mTrackableBehaviour.TrackableName == "BruineBeerKaart")
         {
-            beervraag.SetActive(true);
+            Debug.Log("Hell YEAH!!!");
+            beerVraag.SetActive(true);
             //FindObjectOfType<AudioManager>().Play("Mbeer");
-            Debug.Log("BEER CARD FOUND PEDOBEAR PEDOBEAR LIEVE JOOP!!!!!");
         }
-        //quest = !quest;
-        //game.SetActive(quest);
-    }
 
+    }
     #endregion // PRIVATE_METHODS
 }
